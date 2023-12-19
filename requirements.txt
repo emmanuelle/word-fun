@@ -1,0 +1,4 @@
+dash >= 2.9
+dash_bootstrap_components
+pandas
+gtts

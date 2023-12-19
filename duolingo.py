@@ -1,21 +1,14 @@
 from gtts import gTTS
 import os
+import pandas as pd
+
+word_list = pd.read_excel('words.ods')['mot']
 
 def text_to_speech(text):
     tts = gTTS(text=text, lang='fr')
-    filename = text + '.mp3'
+    filename = os.path.join('audio_files', text + '.mp3')
     tts.save(filename)
-    # os.system(f"vlc {filename}")
 
-
-word_list = ["guitare",
-        "dessus",
-        "bientôt",
-        "poule",
-        "manger",
-        "petit",
-        "rapide"
-        ]
 
 if __name__ == "__main__":
     for word in word_list:
